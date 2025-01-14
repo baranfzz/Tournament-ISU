@@ -121,7 +121,6 @@ public class Main {
         }
         if (player1.contains(shuffledDeck.get(0))) {
             System.out.println("Place your card");
-
             player1.get();
         }
     }
