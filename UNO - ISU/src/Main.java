@@ -4,6 +4,8 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         ArrayList<String> shuffledDeck = new ArrayList<String>();
         ArrayList<String> deck = new ArrayList<String>();
+        ArrayList<String> player1 = new ArrayList<String>();
+        ArrayList<String> player2 = new ArrayList<String>();
         deck.add("0R");
         deck.add("1R");
         deck.add("1R");
@@ -105,10 +107,22 @@ public class Main {
         deck.add("Wild Draw 4");
         deck.add("Wild Draw 4");
         for (int i = 0; i < deck.toArray().length; i++) {
-            i = (int)(Math.random()* (100 - 1 + 1) + 1);
+            i = (int) (Math.random() * (100 - 1 + 1) + 1);
             String newCard = deck.get(i);
             shuffledDeck.add(newCard);
         }
-        System.out.println(shuffledDeck);
+        for (int i = 0; i < 7; i++) {
+            shuffledDeck.remove(i);
+            player1.add(shuffledDeck.get(i));
+        }
+        for (int i = 0; i < 7; i++) {
+            shuffledDeck.remove(i);
+            player2.add(shuffledDeck.get(i));
+        }
+        if (player1.contains(shuffledDeck.get(0))) {
+            System.out.println("Place your card");
+
+            player1.get();
+        }
     }
 }
