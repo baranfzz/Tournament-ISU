@@ -4,6 +4,7 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         ArrayList<String> shuffledDeck = new ArrayList<String>();
         ArrayList<String> deck = new ArrayList<String>();
+        ArrayList<String> mainDeck = new ArrayList<String>();
         ArrayList<String> player1 = new ArrayList<String>();
         ArrayList<String> player2 = new ArrayList<String>();
         deck.add("0R");
@@ -119,9 +120,26 @@ public class Main {
             shuffledDeck.remove(i);
             player2.add(shuffledDeck.get(i));
         }
-        if (player1.contains(shuffledDeck.get(0))) {
-            System.out.println("Place your card");
-            player1.get();
+        mainDeck.add(shuffledDeck.get(shuffledDeck.size() - 1));
+        if (player1.contains(String.valueOf((mainDeck.get(mainDeck.size() - 1)).charAt(0))) || player1.contains(String.valueOf((shuffledDeck.get(shuffledDeck.size() - 1)).charAt(1)))) {
+            System.out.println("What card would you like to place?");
+            String player1Card = sc.nextLine();
+            player1.remove(player1.indexOf(player1Card));
+            mainDeck.add(player1Card);
+            }
+        else {
+            player1.add(shuffledDeck.get(shuffledDeck.size() - 1));
+            shuffledDeck.remove(shuffledDeck.size() - 1);
+        }
+        if (player2.contains(String.valueOf((mainDeck.get(mainDeck.size() - 1)).charAt(0))) || player2.contains(String.valueOf((shuffledDeck.get(shuffledDeck.size() - 1)).charAt(1)))) {
+            System.out.println("What card would you like to place?");
+            String player2Card = sc.nextLine();
+            player2.remove(player2.indexOf(player2Card));
+            mainDeck.add(player2Card);
+        }
+        else {
+            player2.add(shuffledDeck.get(shuffledDeck.size() - 1));
+            shuffledDeck.remove(shuffledDeck.size() - 1);
         }
     }
 }
