@@ -593,41 +593,56 @@ public class Main {
         if (firstPlacePlayoff.get(0) > secondPlacePlayoff.get(1)) {
             finalsQualifier.add(group1PlayoffQualifiers.get(0));
             firstPlaceGroup1Points += 3;
+            highestScoreSemiFinals1 = firstPlacePlayoff.get(0);
+            semiFinalsWinner1 = group1PlayoffQualifiers.get(0);
         } else {
             finalsQualifier.add(group2PlayoffQualifiers.get(1));
             secondPlaceGroup1Points += 3;
-            if (firstPlacePlayoff.get(1) > secondPlacePlayoff.get(0)) {
-                finalsQualifier.add(group1PlayoffQualifiers.get(1));
-                firstPlaceGroup2Points += 3;
-            } else {
-                finalsQualifier.add(group2PlayoffQualifiers.get(0));
-                secondPlaceGroup1Points += 3;
-            }
-            System.out.println("Round 1: " + group1PlayoffQualifiers.get(0) + " scored " + firstPlaceGroup1 + " goals" + " | " + group2PlayoffQualifiers.get(1) + " scored " + secondPlaceGroup2 + " goals");
-            System.out.println(group1PlayoffQualifiers.get(0) + " now has a point total of " + firstPlaceGroup1Points + " | " + group2PlayoffQualifiers.get(1) + " now has a point total of " + secondPlaceGroup2Points);
-            System.out.println("Round 2: " + group2PlayoffQualifiers.get(0) + " scored " + firstPlaceGroup2 + " goals" + " | " + group1PlayoffQualifiers.get(1) + " scored " + secondPlaceGroup1 + " goals");
-            System.out.println(group2PlayoffQualifiers.get(0) + " now has a point total of " + firstPlaceGroup2Points + " | " + group1PlayoffQualifiers.get(1) + " now has a point total of " + secondPlaceGroup1Points);
-            System.out.println(finalsQualifier);
-            System.out.println("Congrats!" + finalsQualifier.get(0) + " and " + finalsQualifier.get(1) + " will be competing in the finals");
-            //
-            int finalsQualifier1 = (int) (Math.random() * (10 + 1) + 0);
-            int finalsQualifier1Points = 0;
-            int finalsQualifier2 = (int) (Math.random() * (10 + 1) + 0);
-            int finalsQualifier2Points = 0;
-            if (finalsQualifier1 == finalsQualifier2) {
-                finalsQualifier2 = (int) (Math.random() * (10 + 1) + 0);
-            }
-            System.out.println("In the final game " + finalsQualifier.get(0) + " scored " + finalsQualifier1 + " goals " + " | " + finalsQualifier.get(1) + " scored " + finalsQualifier2 + " goals");
-            System.out.println("In the final game " + finalsQualifier.get(0) + " finished with " + finalsQualifier1Points + " points " + " | " + finalsQualifier.get(1) + " finished with " + finalsQualifier2Points + " points");
-            if (finalsQualifier1 > finalsQualifier2) {
-                finalsQualifier1Points += 3;
-                System.out.println("Congrats! Our tournament winner is: " + finalsQualifier.get(0));
-            } else {
-                System.out.println("Congrats! Our tournament winner is: " + finalsQualifier.get(1));
-            }
-            System.out.println("Tournament Summary:");
-            System.out.println("The highest score in group 1 stage: " + maxScore + " made by: " + group1PlayoffQualifiers.get(0));
-            System.out.println("The highest score in group 2 stage: " + maxScore2 + " made by: " + group1PlayoffQualifiers.get(0));
+            highestScoreSemiFinals1 = secondPlacePlayoff.get(1);
+            semiFinalsWinner1 = group2PlayoffQualifiers.get(1);
         }
+        if (firstPlacePlayoff.get(1) > secondPlacePlayoff.get(0)) {
+            finalsQualifier.add(group1PlayoffQualifiers.get(1));
+            firstPlaceGroup2Points += 3;
+            highestScoreSemiFinals2 = firstPlacePlayoff.get(1);
+            semiFinalsWinner2 = group1PlayoffQualifiers.get(1);
+        } else {
+            finalsQualifier.add(group2PlayoffQualifiers.get(0));
+            secondPlaceGroup1Points += 3;
+            highestScoreSemiFinals2 = secondPlacePlayoff.get(0);
+            semiFinalsWinner2 = group2PlayoffQualifiers.get(0);
         }
+        System.out.println("Round 1: " + group1PlayoffQualifiers.get(0) + " scored " + firstPlaceGroup1 + " goals" + " | " + group2PlayoffQualifiers.get(1) + " scored " + secondPlaceGroup2 + " goals");
+        System.out.println(group1PlayoffQualifiers.get(0) + " now has a point total of " + firstPlaceGroup1Points + " | " + group2PlayoffQualifiers.get(1) + " now has a point total of " + secondPlaceGroup2Points);
+        System.out.println("Round 2: " + group2PlayoffQualifiers.get(0) + " scored " + firstPlaceGroup2 + " goals" + " | " + group1PlayoffQualifiers.get(1) + " scored " + secondPlaceGroup1 + " goals");
+        System.out.println(group2PlayoffQualifiers.get(0) + " now has a point total of " + firstPlaceGroup2Points + " | " + group1PlayoffQualifiers.get(1) + " now has a point total of " + secondPlaceGroup1Points);
+        System.out.println(finalsQualifier);
+        System.out.println("Congrats!" + finalsQualifier.get(0) + " and " + finalsQualifier.get(1) + " will be competing in the finals");
+        //
+        int finalsQualifier1 = (int) (Math.random() * (10 + 1) + 0);
+        int finalsQualifier1Points = 0;
+        int finalsQualifier2 = (int) (Math.random() * (10 + 1) + 0);
+        int finalsQualifier2Points = 0;
+        if (finalsQualifier1 == finalsQualifier2) {
+            finalsQualifier2 = (int) (Math.random() * (10 + 1) + 0);
+        }
+        System.out.println("In the final game " + finalsQualifier.get(0) + " scored " + finalsQualifier1 + " goals " + " | " + finalsQualifier.get(1) + " scored " + finalsQualifier2 + " goals");
+        System.out.println("In the final game " + finalsQualifier.get(0) + " finished with " + finalsQualifier1Points + " points " + " | " + finalsQualifier.get(1) + " finished with " + finalsQualifier2Points + " points");
+        if (finalsQualifier1 > finalsQualifier2) {
+            finalsQualifier1Points += 3;
+            System.out.println("Congrats! Our tournament winner is: " + finalsQualifier.get(0));
+            highestScoreFinals = finalsQualifier1;
+            finalsWinner = finalsQualifier.get(0);
+        } else {
+            System.out.println("Congrats! Our tournament winner is: " + finalsQualifier.get(1));
+            highestScoreFinals = finalsQualifier2;
+            finalsWinner = finalsQualifier.get(1);
+        }
+        //Tournament Summary
+        System.out.println("The highest score in group 1 stage: " + maxScore + " made by: " + group1PlayoffQualifiers.get(0));
+        System.out.println("The highest score in group 2 stage: " + maxScore2 + " made by: " + group1PlayoffQualifiers.get(0));
+        System.out.println("The highest score in semi-finals round 1: " + highestScoreSemiFinals1 + " made by: " + semiFinalsWinner1);
+        System.out.println("The highest score in semi-finals round 1: " + highestScoreSemiFinals2 + " made by: " + semiFinalsWinner2);
+        System.out.println("The highest score in finals: " + highestScoreFinals + " made by: " + finalsWinner);
+    }
 }
