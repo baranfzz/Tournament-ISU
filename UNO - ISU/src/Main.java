@@ -640,9 +640,7 @@ public class Main {
         if (finalsQualifier1 == finalsQualifier2) {
             finalsQualifier2 = (int) (Math.random() * (10 + 1) + 0);
         }
-        //finals standings and winner announcement
-        System.out.println("In the final game " + finalsQualifier.get(0) + " scored " + finalsQualifier1 + " goals " + " | " + finalsQualifier.get(1) + " scored " + finalsQualifier2 + " goals");
-        System.out.println("In the final game " + finalsQualifier.get(0) + " finished with " + finalsQualifier1Points + " points " + " | " + finalsQualifier.get(1) + " finished with " + finalsQualifier2Points + " points");
+        //finals winner announcement
         if (finalsQualifier1 > finalsQualifier2) {
             finalsQualifier1Points += 3;
             System.out.println("Congrats! Our tournament winner is: " + finalsQualifier.get(0));
@@ -653,6 +651,9 @@ public class Main {
             highestScoreFinals = finalsQualifier2;
             finalsWinner = finalsQualifier.get(1);
         }
+        //finals standings
+        System.out.println("In the final game " + finalsQualifier.get(0) + " scored " + finalsQualifier1 + " goals " + " | " + finalsQualifier.get(1) + " scored " + finalsQualifier2 + " goals");
+        System.out.println("In the final game " + finalsQualifier.get(0) + " finished with " + finalsQualifier1Points + " points " + " | " + finalsQualifier.get(1) + " finished with " + finalsQualifier2Points + " points");
         //Tournament Summary
         System.out.println("Tournament Summary:");
         System.out.println("The highest score in group 1 stage: " + maxScore + " made by: " + group1PlayoffQualifiers.get(0));
