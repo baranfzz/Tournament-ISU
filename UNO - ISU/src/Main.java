@@ -14,6 +14,7 @@ public class Main {
         ArrayList<Integer> firstMatchMemberScoreGroup2 = new ArrayList<Integer>();
         ArrayList<Integer> secondMatchMemberScoreGroup2 = new ArrayList<Integer>();
         ArrayList<Integer> group1GroupStageStatus = new ArrayList<Integer>();
+        ArrayList<Integer> group2GroupStageStatus = new ArrayList<Integer>();
         ArrayList<String> group1PlayoffQualifiers = new ArrayList<String>();
         int Member1Team1Group1Status = 0;
         group1GroupStageStatus.add(Member1Team1Group1Status);
@@ -39,6 +40,31 @@ public class Main {
         group1GroupStageStatus.add(Member2Team5Group1Status);
         int Member2Team6Group1Status = 0;
         group1GroupStageStatus.add(Member2Team6Group1Status);
+        //
+        int Member1Team1Group2Status = 0;
+        group1GroupStageStatus.add(Member1Team1Group2Status);
+        int Member1Team2Group2Status = 0;
+        group1GroupStageStatus.add(Member1Team2Group2Status);
+        int Member1Team3Group2Status = 0;
+        group1GroupStageStatus.add(Member1Team3Group2Status);
+        int Member1Team4Group2Status = 0;
+        group1GroupStageStatus.add(Member1Team4Group2Status);
+        int Member1Team5Group2Status = 0;
+        group1GroupStageStatus.add(Member1Team5Group2Status);
+        int Member1Team6Group2Status = 0;
+        group1GroupStageStatus.add(Member1Team6Group2Status);
+        int Member2Team1Group2Status = 0;
+        group1GroupStageStatus.add(Member2Team1Group2Status);
+        int Member2Team2Group2Status = 0;
+        group1GroupStageStatus.add(Member2Team2Group2Status);
+        int Member2Team3Group2Status = 0;
+        group1GroupStageStatus.add(Member2Team3Group2Status);
+        int Member2Team4Group2Status = 0;
+        group1GroupStageStatus.add(Member2Team4Group2Status);
+        int Member2Team5Group2Status = 0;
+        group1GroupStageStatus.add(Member2Team5Group2Status);
+        int Member2Team6Group2Status = 0;
+        group1GroupStageStatus.add(Member2Team6Group2Status);
         String roundMembers = " ";
         ArrayList<String> team1 = new ArrayList<String>();
         int roundB = 0;
@@ -268,20 +294,161 @@ public class Main {
                 System.out.println("The winner is " + secondMatchMemberGroup1.get(5));
             }
         }
-        int topScoreGroup1 = Integer.MIN_VALUE;
-        int secondScoreGroup1 = Integer.MIN_VALUE;
-        for (int i = 0; i < group1GroupStageStatus.size(); i++) {
-            if (group1GroupStageStatus.get(i) > topScoreGroup1) {
-                secondScoreGroup1 = topScoreGroup1;
-                topScoreGroup1 = group1GroupStageStatus.get(i);
-                firstMatchMemberScoreGroup1.indexOf(topScoreGroup1);
-                    group1PlayoffQualifiers.add(firstMatchMemberGroup1.get(topScoreGroup1));
-                secondMatchMemberScoreGroup1.indexOf(topScoreGroup1);
-                group1PlayoffQualifiers.add(firstMatchMemberGroup1.get(topScoreGroup1));
-            } else if (i < topScoreGroup1 && group1GroupStageStatus.get(i) > secondScoreGroup1) {
-                topScoreGroup1 = group1GroupStageStatus.get(i);
+        //
+        int firstMatchGroup2Team1 = (int) (Math.random() * (10 + 1) + 0);
+        firstMatchMemberScoreGroup2.add(firstMatchGroup2Team1);
+        int firstMatchGroup2Team2 = (int) (Math.random() * (10 + 1) + 0);
+        firstMatchMemberScoreGroup2.add(firstMatchGroup2Team2);
+        int firstMatchGroup2Team3 = (int) (Math.random() * (10 + 1) + 0);
+        firstMatchMemberScoreGroup2.add(firstMatchGroup2Team3);
+        int firstMatchGroup2Team4 = (int) (Math.random() * (10 + 1) + 0);
+        firstMatchMemberScoreGroup2.add(firstMatchGroup2Team4);
+        int firstMatchGroup2Team5 = (int) (Math.random() * (10 + 1) + 0);
+        firstMatchMemberScoreGroup2.add(firstMatchGroup2Team5);
+        int firstMatchGroup2Team6 = (int) (Math.random() * (10 + 1) + 0);
+        firstMatchMemberScoreGroup2.add(firstMatchGroup2Team6);
+
+        int secondMatchGroup2Team1 = (int) (Math.random() * (10 + 1) + 0);
+        secondMatchMemberScoreGroup2.add(secondMatchGroup2Team1);
+        int secondMatchGroup2Team2 = (int) (Math.random() * (10 + 1) + 0);
+        secondMatchMemberScoreGroup2.add(secondMatchGroup2Team2);
+        int secondMatchGroup2Team3 = (int) (Math.random() * (10 + 1) + 0);
+        secondMatchMemberScoreGroup2.add(secondMatchGroup2Team3);
+        int secondMatchGroup2Team4 = (int) (Math.random() * (10 + 1) + 0);
+        secondMatchMemberScoreGroup2.add(secondMatchGroup2Team4);
+        int secondMatchGroup2Team5 = (int) (Math.random() * (10 + 1) + 0);
+        secondMatchMemberScoreGroup2.add(secondMatchGroup2Team5);
+        int secondMatchGroup2Team6 = (int) (Math.random() * (10 + 1) + 0);
+        secondMatchMemberScoreGroup2.add(secondMatchGroup2Team6);
+
+        if (firstMatchMemberScoreGroup2.get(0) > secondMatchMemberScoreGroup2.get(0)) {
+            Member1Team1Group1Status = +3;
+        } else if (firstMatchMemberScoreGroup2.get(0) < secondMatchMemberScoreGroup2.get(0)) {
+            Member2Team1Group2Status = +3;
+        } else {
+            Member1Team1Group2Status = +1;
+            Member2Team1Group2Status = +1;
+        }
+        if (firstMatchMemberScoreGroup2.get(1) > secondMatchMemberScoreGroup2.get(1)) {
+            Member1Team2Group2Status = +3;
+        } else if (firstMatchMemberScoreGroup2.get(1) < secondMatchMemberScoreGroup2.get(1)) {
+            Member2Team2Group2Status = +3;
+        } else {
+            Member1Team2Group2Status = +1;
+            Member2Team2Group2Status = +1;
+        }
+        if (firstMatchMemberScoreGroup2.get(2) > secondMatchMemberScoreGroup2.get(2)) {
+            Member1Team3Group2Status = +3;
+        } else if (firstMatchMemberScoreGroup2.get(2) < secondMatchMemberScoreGroup2.get(2)) {
+            Member2Team3Group2Status = +3;
+        } else {
+            Member1Team3Group2Status = +1;
+            Member2Team3Group2Status = +1;
+        }
+        if (firstMatchMemberScoreGroup2.get(3) > secondMatchMemberScoreGroup2.get(3)) {
+            Member1Team4Group2Status = +3;
+        } else if (firstMatchMemberScoreGroup2.get(3) < secondMatchMemberScoreGroup2.get(3)) {
+            Member2Team4Group2Status = +3;
+        } else {
+            Member1Team4Group2Status = +1;
+            Member2Team4Group2Status = +1;
+        }
+        if (firstMatchMemberScoreGroup2.get(4) > secondMatchMemberScoreGroup2.get(4)) {
+            Member1Team5Group2Status = +3;
+        } else if (firstMatchMemberScoreGroup2.get(4) < secondMatchMemberScoreGroup2.get(4)) {
+            Member2Team5Group2Status = +3;
+        } else {
+            Member1Team5Group2Status = +1;
+            Member2Team5Group2Status = +1;
+        }
+        if (firstMatchMemberScoreGroup2.get(5) > secondMatchMemberScoreGroup2.get(5)) {
+            Member1Team6Group2Status = +3;
+        } else if (firstMatchMemberScoreGroup2.get(5) < secondMatchMemberScoreGroup2.get(5)) {
+            Member2Team6Group2Status = +3;
+        } else {
+            Member1Team6Group2Status = +1;
+            Member2Team6Group2Status = +1;
+        }
+        System.out.println("Here are the standings for group 2:");
+        System.out.println(" ");
+        System.out.println("Round 1: " + firstMatchMemberGroup2.get(0) + " scored " + firstMatchMemberScoreGroup2.get(0) + " goals" + " | " + secondMatchMemberGroup2.get(0) + " scored " + secondMatchMemberScoreGroup2.get(0) + " goals");
+        System.out.println(firstMatchMemberGroup2.get(0) + " now has a point total of " + Member1Team1Group1Status + " | " + secondMatchMemberGroup2.get(0) + " now has a point total of " + Member2Team1Group2Status);
+        if (Member1Team1Group2Status > Member2Team1Group2Status) {
+            System.out.println("The winner is " + firstMatchMemberGroup2.get(0));
+        } else if (Member2Team1Group2Status > Member1Team1Group2Status) {
+            System.out.println("The winner is " + secondMatchMemberGroup1.get(0));
+        } else {
+            if (firstMatchGroup2Team1 > secondMatchGroup2Team1) {
+                System.out.println("The winner is " + firstMatchMemberGroup2.get(0));
+            } else {
+                System.out.println("The winner is " + secondMatchMemberGroup2.get(0));
             }
         }
-        System.out.println(group1PlayoffQualifiers);
+        System.out.println("Round 2: " + firstMatchMemberGroup2.get(1) + " scored " + firstMatchMemberScoreGroup2.get(1) + " goals" + " | " + secondMatchMemberGroup2.get(1) + " scored " + secondMatchMemberScoreGroup2.get(1) + " goals");
+        System.out.println(firstMatchMemberGroup2.get(1) + " now has a point total of " + Member1Team2Group2Status + " | " + secondMatchMemberGroup2.get(1) + " now has a point total of " + Member2Team2Group2Status);
+        if (Member1Team2Group2Status > Member2Team2Group2Status) {
+            System.out.println("The winner is " + firstMatchMemberGroup2.get(1));
+        } else if (Member2Team2Group2Status > Member1Team2Group2Status) {
+            System.out.println("The winner is " + secondMatchMemberGroup2.get(1));
+        } else {
+            if (firstMatchGroup2Team2 > secondMatchGroup2Team2) {
+                System.out.println("The winner is " + firstMatchMemberGroup2.get(1));
+            } else {
+                System.out.println("The winner is " + secondMatchMemberGroup2.get(1));
+            }
+        }
+        System.out.println("Round 3: " + firstMatchMemberGroup2.get(2) + " scored " + firstMatchMemberScoreGroup2.get(2) + " goals" + " | " + secondMatchMemberGroup2.get(2) + " scored " + secondMatchMemberScoreGroup2.get(2) + " goals");
+        System.out.println(firstMatchMemberGroup2.get(2) + " now has a point total of " + Member1Team3Group2Status + " | " + secondMatchMemberGroup2.get(2) + " now has a point total of " + Member2Team3Group2Status);
+        if (Member1Team3Group2Status > Member2Team3Group2Status) {
+            System.out.println("The winner is " + firstMatchMemberGroup2.get(2));
+        } else if (Member2Team3Group2Status > Member1Team3Group2Status) {
+            System.out.println("The winner is " + secondMatchMemberGroup2.get(2));
+        } else {
+            if (firstMatchGroup1Team3 > secondMatchGroup2Team3) {
+                System.out.println("The winner is " + firstMatchMemberGroup2.get(2));
+            } else {
+                System.out.println("The winner is " + secondMatchMemberGroup2.get(2));
+            }
+        }
+        System.out.println("Round 4: " + firstMatchMemberGroup2.get(3) + " scored " + firstMatchMemberScoreGroup2.get(3) + " goals" + " | " + secondMatchMemberGroup2.get(3) + " scored " + secondMatchMemberScoreGroup2.get(3) + " goals");
+        System.out.println(firstMatchMemberGroup2.get(3) + " now has a point total of " + Member1Team4Group2Status + " | " + secondMatchMemberGroup2.get(3) + " now has a point total of " + Member2Team4Group2Status);
+        if (Member1Team4Group2Status > Member2Team4Group2Status) {
+            System.out.println("The winner is " + firstMatchMemberGroup2.get(3));
+        } else if (Member2Team4Group2Status > Member1Team4Group2Status) {
+            System.out.println("The winner is " + secondMatchMemberGroup2.get(3));
+        } else {
+            if (firstMatchGroup2Team4 > secondMatchGroup2Team4) {
+                System.out.println("The winner is " + firstMatchMemberGroup2.get(3));
+            } else {
+                System.out.println("The winner is " + secondMatchMemberGroup2.get(3));
+            }
+        }
+        System.out.println("Round 5: " + firstMatchMemberGroup2.get(4) + " scored " + firstMatchMemberScoreGroup2.get(4) + " goals" + " | " + secondMatchMemberGroup2.get(4) + " scored " + secondMatchMemberScoreGroup2.get(4) + " goals");
+        System.out.println(firstMatchMemberGroup2.get(4) + " now has a point total of " + Member1Team5Group1Status + " | " + secondMatchMemberGroup2.get(4) + " now has a point total of " + Member2Team5Group2Status);
+        if (Member1Team5Group2Status > Member2Team5Group2Status) {
+            System.out.println("The winner is " + firstMatchMemberGroup2.get(4));
+        } else if (Member2Team5Group2Status > Member1Team5Group2Status) {
+            System.out.println("The winner is " + secondMatchMemberGroup2.get(4));
+        } else {
+            if (firstMatchGroup2Team5 > secondMatchGroup2Team5) {
+                System.out.println("The winner is " + firstMatchMemberGroup2.get(4));
+            } else {
+                System.out.println("The winner is " + secondMatchMemberGroup2.get(4));
+            }
+        }
+        System.out.println("Round 6: " + firstMatchMemberGroup2.get(5) + " scored " + firstMatchMemberScoreGroup2.get(5) + " goals" + " | " + secondMatchMemberGroup2.get(5) + " scored " + secondMatchMemberScoreGroup2.get(5) + " goals");
+        System.out.println(firstMatchMemberGroup2.get(5) + " now has a point total of " + Member1Team6Group2Status + " | " + secondMatchMemberGroup2.get(5) + " now has a point total of " + Member2Team6Group2Status);
+        if (Member1Team6Group2Status > Member2Team6Group2Status) {
+            System.out.println("The winner is " + firstMatchMemberGroup2.get(5));
+        } else if (Member2Team6Group2Status > Member1Team6Group2Status) {
+            System.out.println("The winner is " + secondMatchMemberGroup2.get(5));
+        } else {
+            if (firstMatchGroup2Team6 > secondMatchGroup2Team6) {
+                System.out.println("The winner is " + firstMatchMemberGroup2.get(5));
+            } else {
+                System.out.println("The winner is " + secondMatchMemberGroup2.get(5));
+            }
+        }
+
     }
 }
