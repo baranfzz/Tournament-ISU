@@ -61,7 +61,6 @@ public class Main {
         int Member2Team6Group2Status = 0;
         //Generating user-inputted team names
         String roundMembers = " ";
-        ArrayList<String> team1 = new ArrayList<String>();
         int roundB = 0;
         int roundA = 0;
         String round1 = " ";
