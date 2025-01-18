@@ -26,6 +26,13 @@ public class Main {
         int secondMaxIndex = 0;
         int secondMaxIndex2 = 0;
         int maxScore2 = 0;
+        int highestScoreSemiFinals1 = 0;
+        int highestScoreSemiFinals2 = 0;
+        int highestScoreFinals = 0;
+        String semiFinalsWinner1 = " ";
+        String semiFinalsWinner2 = " ";
+        String finalsWinner = " ";
+        //
         int Member1Team1Group1Status = 0;
         int Member1Team2Group1Status = 0;
         int Member1Team3Group1Status = 0;
@@ -562,10 +569,10 @@ public class Main {
             group2PlayoffQualifiers.add(group2Winners.get(secondMaxIndex));
         }
         System.out.println(group2PlayoffQualifiers);
-        //
+        //Playoff Rounds Announced
         System.out.println("Round 1 of Playoffs: " + group1PlayoffQualifiers.get(0) + " V.S " + group2PlayoffQualifiers.get(1));
         System.out.println("Round 2 of Playoffs: " + group2PlayoffQualifiers.get(0) + " V.S " + group1PlayoffQualifiers.get(1));
-        //
+        // Semi Finals Stage
         int firstPlaceGroup1 = (int) (Math.random() * (10 + 1) + 0);
         int firstPlaceGroup1Points = 0;
         firstPlacePlayoff.add(firstPlaceGroup1);
@@ -576,19 +583,19 @@ public class Main {
         int secondPlaceGroup1Points = 0;
         if (firstPlacePlayoff.get(1) != secondPlaceGroup1) {
             secondPlacePlayoff.add(secondPlaceGroup1);
-            int secondPlaceGroup2 = (int) (Math.random() * (10 + 1) + 0);
-            int secondPlaceGroup2Points = 0;
-            if (firstPlacePlayoff.get(0) != secondPlaceGroup2) {
-                secondPlacePlayoff.add(secondPlaceGroup2);
-            }
-            //
-            if (firstPlacePlayoff.get(0) > secondPlacePlayoff.get(1)) {
-                finalsQualifier.add(group1PlayoffQualifiers.get(0));
-                firstPlaceGroup1Points += 3;
-            } else {
-                finalsQualifier.add(group2PlayoffQualifiers.get(1));
-                secondPlaceGroup1Points += 3;
-            }
+        }
+        int secondPlaceGroup2 = (int) (Math.random() * (10 + 1) + 0);
+        int secondPlaceGroup2Points = 0;
+        if (firstPlacePlayoff.get(0) != secondPlaceGroup2) {
+            secondPlacePlayoff.add(secondPlaceGroup2);
+        }
+        //
+        if (firstPlacePlayoff.get(0) > secondPlacePlayoff.get(1)) {
+            finalsQualifier.add(group1PlayoffQualifiers.get(0));
+            firstPlaceGroup1Points += 3;
+        } else {
+            finalsQualifier.add(group2PlayoffQualifiers.get(1));
+            secondPlaceGroup1Points += 3;
             if (firstPlacePlayoff.get(1) > secondPlacePlayoff.get(0)) {
                 finalsQualifier.add(group1PlayoffQualifiers.get(1));
                 firstPlaceGroup2Points += 3;
@@ -618,6 +625,9 @@ public class Main {
             } else {
                 System.out.println("Congrats! Our tournament winner is: " + finalsQualifier.get(1));
             }
+            System.out.println("Tournament Summary:");
+            System.out.println("The highest score in group 1 stage: " + maxScore + " made by: " + group1PlayoffQualifiers.get(0));
+            System.out.println("The highest score in group 2 stage: " + maxScore2 + " made by: " + group1PlayoffQualifiers.get(0));
         }
-    }
+        }
 }
